@@ -84,7 +84,7 @@ class JSC_S(nn.Module):
 
 class JSC_Mmt(nn.Module):
     def __init__(self, info):
-        super(JSC_Tiny, self).__init__()
+        super(JSC_Mmt, self).__init__()
         self.seq_blocks = nn.Sequential(
             # 1st LogicNets Layer
             nn.BatchNorm1d(16),  # input_quant       # 0
