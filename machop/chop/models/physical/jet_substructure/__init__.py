@@ -89,18 +89,25 @@ class JSC_Mmt(nn.Module):
             # 1st LogicNets Layer
             nn.BatchNorm1d(16),  # input_quant       # 0
             nn.ReLU(16),  # 1
-            nn.Linear(16, 24),  # linear              # 2
+            nn.Linear(16, 48),  # linear              # 2
+            # nn.BatchNorm1d(5),  # output_quant       # 3
+            nn.ReLU(48),  # 4
+
+            # 2nd LogicNets Layer
+            nn.BatchNorm1d(48),  # input_quant       # 0
+            nn.ReLU(48),  # 1
+            nn.Linear(48, 24),  # linear              # 2
             # nn.BatchNorm1d(5),  # output_quant       # 3
             nn.ReLU(24),  # 4
 
-            # 2nd LogicNets Layer
+            # 3rd LogicNets Layer
             nn.BatchNorm1d(24),  # input_quant       # 0
             nn.ReLU(24),  # 1
             nn.Linear(24, 8),  # linear              # 2
             # nn.BatchNorm1d(5),  # output_quant       # 3
             nn.ReLU(8),  # 4
 
-            # 3rd LogicNets Layer
+            # 4th LogicNets Layer
             nn.BatchNorm1d(8),  # input_quant       # 0
             nn.ReLU(8),  # 1
             nn.Linear(8, 5),  # linear              # 2
